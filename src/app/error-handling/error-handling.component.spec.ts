@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorHandlingComponent } from './error-handling.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('ErrorHandlingComponent', () => {
   let component: ErrorHandlingComponent;
@@ -8,7 +9,9 @@ describe('ErrorHandlingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorHandlingComponent ]
+      declarations: [ ErrorHandlingComponent ],
+      imports: [HttpClientModule],
+      providers: [HttpClient]
     })
     .compileComponents();
   }));
