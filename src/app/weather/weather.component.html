@@ -1,0 +1,13 @@
+<form #weather="ngForm" (ngSubmit)="onSubmit(weather)">
+  <div class="form-group">
+    <label for="location">Enter text location</label>
+    <input  type="text" class="form-control" id="location" name="location"  required [(ngModel)]="location" />
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!weather.form.valid">Submit</button>
+</form>
+
+<p>Weather Data for {{location}}</p>
+<p class="tempDetails"> Todays Temp is for {{weatherData?.name}}</p>
+<pre>
+{{weatherData | json}}
+</pre>
